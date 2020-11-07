@@ -5,7 +5,7 @@ import './Profile.css';
 const TechStack = (props) => {
     function getTag(tag, index)
     {
-        return <Grid key={index} item xs={8} sm={6} md={3}>
+        return <Grid key={index} item xs={6} sm={4} md={3}>
             <Paper className="tag"> {tag} </Paper>
             </Grid>;
     }
