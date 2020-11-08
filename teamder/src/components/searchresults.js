@@ -1,10 +1,19 @@
-// import projectcard from '../../exampleJSONs/projectcard.json'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 var axios = require('axios');
 
-var Test = require('./components/Test');
+var Test = require('./Test');
 const Vector = require('vector-object');
 var natural = require('natural');
 var TfIdf = natural.TfIdf;
+const querystring = require('querystring');
+axios.defaults.withCredentials = true;
+
 
 
 axios.defaults.withCredentials = true;
@@ -14,20 +23,77 @@ axios.defaults.withCredentials = true;
 
 // Test().then(data => console.log(data))
 
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+}); 
 
-axios.post("http://localhost:5000/getalldata",{})
+async function getData(userData){
+  await axios.post("http://localhost:5000/getalldata", {
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+        },
+        credentials: 'include',
+        withCredentials: false
+      })
 .then(res => res.data)
 .then(projectcard => {
-  console.log(projectcard);
+  // console.log(projectcard);
     const formattedData = formatData(projectcard);
     const vectors = createVectors(formattedData);
     const results = findSimilar(vectors);
-
-    console.log(getResults("5fa6ef67adbfacb6a821f4d0", results))
+    
+    // console.log(getResults("5fa6ef67adbfacb6a821f4d0", results))
+    const list = getResults(results.id, results)
+    return list
 })
+}
  
 
-const formatData = data => {
+export default function SearchResults(props){
+  // console.log("userdata"+ props.userData)
+  const listOfUsers = getData(props.userData);  
+  // console.log("list: "+listOfUsers)
+  // const classes = useStyles();
+    return(
+    listOfUsers.forEach(user => {
+      <Card >
+        <CardContent>
+          <Typography color="textSecondary" gutterBottom>
+          hello?
+            {/* {user.username} */}
+          </Typography>
+          <Typography color="textSecondary">
+            bio here
+          </Typography>
+          <Typography variant="body2" component="p">
+            {user.techStack}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+    })
+  );
+}
+
+
+
+
+const formatData = (data) => {
     let formatted = [];
     data.map(project => {
         let tmpObj = {};
@@ -141,4 +207,4 @@ const formatData = data => {
 
 //     // 
 
-// export default getResults;
+// export default searchResults;

@@ -9,15 +9,15 @@ router.get("/", (req, res) => {
 
 router.post("/", (req,res) => {
     // console.log(req);
-   if(req.user){
+//    if(req.user){
        User.find({}, function(err, users)
        {
            console.log(users);
            res.send(users);
        })
-   }else{
-       res.send("Not Authenticated");
-   }
+//    }else{
+//        res.send("Not Authenticated");
+//    }
 });
 
 module.exports = router;

@@ -11,6 +11,7 @@ import Navbar from './Navbar'
 import Login from './Login'
 import Register from './Register'
 import ProfilePage from '../screens/ProfilePage/profilePage'
+import SearchResults from './searchresults'
 // import Search Bar Component
 import HorizontalLinearStepper from "./SearchBar";
 // import Tags from './Tags';
@@ -52,6 +53,7 @@ const App = () => {
             <h1>Welcome to Teamder's</h1>
             <Edit />
             <HorizontalLinearStepper/>
+            <SearchResults userData={userData}/>
           </Route>
 
           <Route 
