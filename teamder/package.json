@@ -21,10 +21,10 @@
   },
   "scripts": {
     "start-client": "react-scripts start",
-    "build": "react-scripts build && (cd backend && npm install)",
+    "build": "react-scripts build && (cd ../backend && npm install)",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "cd backend && npm start"
+    "start": "cd ../backend && npm start"
   },
   "eslintConfig": {
     "extends": [
