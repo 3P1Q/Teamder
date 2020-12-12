@@ -16,13 +16,16 @@ const port = process.env.PORT || 5000;
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(
-  cors({
-    origin: "http://localhost:3000", // allow to server to accept request from different origin
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true // allow session cookie from browser to pass through
-  })
-);
+const buildPath = path.join(__dirname, '../teamder', 'build');
+app.use(express.static(buildPath));
+
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000", // allow to server to accept request from different origin
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     credentials: true // allow session cookie from browser to pass through
+//   })
+// );
 // Set up sessions
 app.use(session({
     secret: "The Tinder for Techies.",
