@@ -5,7 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+		"start": "node app.js",
+		"client": "cd ../teamder && npm start",
+		"dev": "concurrently -n 'server,client' \"nodemon app.js\" -c 'red,green' \"npm run client\"",
+		"heroku-postbuild": "npm install --prefix teamder && npm run build --prefix teamder"
   },
   "author": "",
   "license": "ISC",
