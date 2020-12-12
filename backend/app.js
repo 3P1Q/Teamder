@@ -45,7 +45,8 @@ app.use(session({
 
 
 // mongoDB Connection
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUnifiedTopology: true});
+const MONGODB_URI = `mongodb+srv://epic-team:${process.env.MONGO_PASSWORD}@cluster0.twmnf.mongodb.net/Teamder?retryWrites=true&w=majority`;
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set("useCreateIndex", true);
 const connection = mongoose.connection;
 connection.once('open', () => {
