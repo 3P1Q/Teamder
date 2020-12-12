@@ -10,6 +10,7 @@ const session = require('express-session');
 const passport = require("passport");
 
 const cors = require('cors');
+const path= require('path');
 
 const app = express();
 const port = process.env.PORT || 5000;

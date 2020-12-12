@@ -24,6 +24,7 @@
     "passport-google-oauth2": "^0.2.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.0.1",
+    "path": "^0.12.7",
     "puppeteer": "^5.5.0",
     "vector-object": "^1.3.0"
   },
