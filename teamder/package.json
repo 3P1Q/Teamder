@@ -20,8 +20,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "heroku-prebuild": "(cd ./teamder && npm install) && (cd ./backend && npm install)",
     "start-client": "react-scripts start",
-    "build": "react-scripts build && (cd ../backend && npm install)",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start": "cd ../backend && npm start"
