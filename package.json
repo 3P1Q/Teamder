@@ -1,5 +1,5 @@
 {
-  "name": "teamder-app",
+  "name": "hackanect-app",
   "version": "1.0.0",
   "description": "Connect with Techies like you",
   "main": "index.js",
@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd backend && node app.js",
-    "heroku-postbuild": "npm install --prefix backend && npm install --prefix teamder && npm run build --prefix teamder"
+    "heroku-postbuild": "npm install --prefix backend && npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
