@@ -6,7 +6,9 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd backend && node app.js",
+    "heroku-postbuild": "npm install --prefix backend && npm install --prefix teamder && npm run build --prefix teamder"
   },
   "repository": {
     "type": "git",
