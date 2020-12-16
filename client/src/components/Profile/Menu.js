@@ -30,7 +30,7 @@ const Menu = (props) => {
                 ) : (
                     <li><Link to="/connect" style={{textDecoration:"none", color:"inherit"}}>Explore</Link></li>
                 )}
-                <li><Link to="/profile" style={{textDecoration:"none", color:"inherit"}}>Search a User</Link></li>
+                <li><Link to="/profile" style={{textDecoration:"none", color:"inherit"}}>Search another User</Link></li>
                 {data.username===localStorage.getItem("username") && <li><Link to="/hackathons" style={{textDecoration:"none", color:"inherit"}}>Hackathons</Link></li>}
                 {data.username===localStorage.getItem("username") && <li><Edit/></li>}                
                 {data.username===localStorage.getItem("username") && (
