@@ -1,0 +1,21 @@
+{
+  "name": "teamder-app",
+  "version": "1.0.0",
+  "description": "Connect with Techies",
+  "main": "backend/app.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2802harsh/Teamder-1.git"
+  },
+  "author": "Team 3P1Q",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/2802harsh/Teamder-1/issues"
+  },
+  "homepage": "https://github.com/2802harsh/Teamder-1#readme"
+}
