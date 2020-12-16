@@ -61,7 +61,7 @@ router.get("/hackanect",
   function(req, res) {
     // Successful authentication, redirect to secrets.
     // res.send("Github Authentication Done");
-    // console.log(req.user);
+    console.log(req.user);
     res.redirect(`/github/login/${req.user.username}`);
   });
 
