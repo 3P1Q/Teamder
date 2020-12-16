@@ -1,14 +1,18 @@
 {
-  "name": "backend",
+  "name": "teamder-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tinder for Techies",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node backend/app",
+    "server": "nodemon backend/app",
+    "client": "npm start --prefix teamder",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix teamder && npm run build --prefix teamder"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Team 3P1Q",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -30,6 +34,7 @@
     "vector-object": "^1.3.0"
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "nodemon": "^2.0.6"
   }
 }
