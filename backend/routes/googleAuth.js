@@ -40,7 +40,7 @@ router.get("/hackanect",
   function(req, res) {
     // Successful authentication, redirect to secrets.
     // res.send("Google Authentication Done");
-    console.log(req.user);
+    // console.log(req.user);
     res.redirect(`/google/login/${req.user.username}`);
   });
 

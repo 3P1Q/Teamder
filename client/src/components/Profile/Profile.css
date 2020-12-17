@@ -248,7 +248,7 @@
     }
     
     .menu{
-        padding: 1%;
+        padding: 2%;
         display: flex;
         flex-direction: row;
         justify-content: flex-end ;
@@ -262,7 +262,8 @@
     }
     .menu ul li{
         display: inline-block;
-        margin: 2% 10%;
+        width: 50%;
+        margin: 3% 0;
     }
     .bio{
         padding: 200px;
