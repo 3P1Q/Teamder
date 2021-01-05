@@ -47,7 +47,7 @@ async function updateHackathon() {
         }
         return arr1;
     });
-    let hacksNames = await page.$$eval('.hcmcER > span > .sc-fzqBZW', function(a){
+    let hacksNames = await page.$$eval('.sc-fzqBZW', function(a){
         var arr2 = [];
         
         for(var i=0;i<a.length;i++)
@@ -58,7 +58,7 @@ async function updateHackathon() {
         return arr2;
     });
 
-    let validate = await page.$$eval('.hQBLZg', function(a){
+    let validate = await page.$$eval('.sc-fznyAO', function(a){
         var arr3 = [];
         
         for(var i=0;i<a.length;i++)
