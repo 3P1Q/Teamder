@@ -44,7 +44,7 @@ function Navbar() {
       <AppBar position="static" style={{background: '#4D4C7D'}} >
         <Toolbar>
           <img src="/images/logo.png" alt="logo" style={{height:"3.5rem"}}/>
-          <p style={{fontSize:"1.5rem", paddingLeft:"0.5rem"}}>Hackanect</p>
+          <h1 style={{fontSize:"1.5rem", paddingLeft:"0.5rem"}}>Hackanect</h1>
           
           <Typography className={classes.title}>
           </Typography>
